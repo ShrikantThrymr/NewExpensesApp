@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_margin="@dimen/d5"
+        android:padding="@dimen/d10"
+        android:background="@drawable/edit_text_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.example.thrymr.newexpensesapp.Views.CircularImageView
+            android:id="@+id/imv_employee"
+            android:layout_width="@dimen/d50"
+            android:layout_height="@dimen/d50"
+            android:layout_centerVertical="true"
+            android:src="@drawable/shrikant"/>
+
+
+        <RelativeLayout
+            android:id="@+id/main_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/d5"
+            android:layout_toEndOf="@+id/imv_employee"
+            android:layout_toRightOf="@+id/imv_employee">
+
+            <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+                android:id="@+id/tv_employee_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Shrikant Tripathi"
+                android:textColor="@color/input_register_bg"
+                android:textSize="@dimen/s15"
+                app:font="@string/lato_bold"/>
+
+            <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+                android:id="@+id/tv_emp_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_employee_name"
+                android:layout_marginTop="@dimen/d3"
+                android:text="EMP-ID-139"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/s10"
+                app:font="@string/lato_bold"/>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

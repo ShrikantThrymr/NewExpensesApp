@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/logo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/main_rl"
+        android:layout_marginBottom="@dimen/d40">
+
+        <com.example.thrymr.newexpensesapp.Views.CustomImageView
+            android:id="@+id/thrymr_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/thrymr_logo" />
+
+        <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/thrymr_logo"
+            android:layout_marginTop="@dimen/d20"
+            android:gravity="center"
+            android:text="@string/thrymr_expenses_app"
+            android:textColor="@color/input_register_bg"
+            android:textSize="@dimen/s20" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/d25">
+
+        <RelativeLayout
+            android:id="@+id/email_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.example.thrymr.newexpensesapp.Views.CustomTextInputLayout
+                android:id="@+id/email_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorTextAppearance="@style/error_appearance"
+                app:hintTextAppearance="@style/TextLabel">
+
+                <com.example.thrymr.newexpensesapp.Views.CustomEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/user_name"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    app:ciefont="@string/source_scans_regular" />
+            </com.example.thrymr.newexpensesapp.Views.CustomTextInputLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/password_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/email_rl"
+            android:layout_marginTop="@dimen/d10">
+
+            <com.example.thrymr.newexpensesapp.Views.CustomTextInputLayout
+                android:id="@+id/password_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorTextAppearance="@style/error_appearance"
+                app:hintTextAppearance="@style/TextLabel"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/colorPrimary">
+
+                <com.example.thrymr.newexpensesapp.Views.CustomEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    app:ciefont="@string/source_scans_regular" />
+            </com.example.thrymr.newexpensesapp.Views.CustomTextInputLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/email_sign_in_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_rl"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/d20"
+        android:background="@drawable/rounded_corners_green"
+        android:gravity="center">
+
+        <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d5"
+            android:gravity="center"
+            android:padding="@dimen/d5"
+            android:text="@string/action_log_in"
+            android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/whiteBackground"
+            app:font="Roboto-Medium.ttf" />
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
