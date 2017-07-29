@@ -1,4 +1,4 @@
-package com.example.thrymr.newexpensesapp.Adapter;
+package com.example.thrymr.newexpensesapp.Adapter.admin;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,13 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.thrymr.newexpensesapp.R;
-import com.example.thrymr.newexpensesapp.Utils.ImageCacheHandler;
 import com.example.thrymr.newexpensesapp.Views.CircularImageView;
 import com.example.thrymr.newexpensesapp.Views.CustomFontTextView;
-import com.example.thrymr.newexpensesapp.listners.EmployeeListItemClickListner;
+import com.example.thrymr.newexpensesapp.listners.admin.EmployeeListItemClickListner;
 import com.example.thrymr.newexpensesapp.models.EmployeeName;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

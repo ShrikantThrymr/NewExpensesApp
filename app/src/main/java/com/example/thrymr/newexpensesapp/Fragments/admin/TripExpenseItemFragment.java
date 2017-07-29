@@ -4,7 +4,6 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,22 +11,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.thrymr.newexpensesapp.Adapter.admin.EmlpoyeeListAdapter;
 import com.example.thrymr.newexpensesapp.R;
-import com.example.thrymr.newexpensesapp.listners.admin.EmployeeListItemClickListner;
-import com.example.thrymr.newexpensesapp.models.EmployeeName;
+import com.example.thrymr.newexpensesapp.models.IndividualExpenses;
 
 import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link EmployeeNameFragment.OnFragmentInteractionListener} interface
+ * {@link TripExpenseItemFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link EmployeeNameFragment#newInstance} factory method to
+ * Use the {@link TripExpenseItemFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EmployeeNameFragment extends Fragment {
+public class TripExpenseItemFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -38,10 +35,9 @@ public class EmployeeNameFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-    private RecyclerView employeeListRecycle;
-    private TabLayout tabLayout;
+    private RecyclerView tripExpensesRev;
 
-    public EmployeeNameFragment() {
+    public TripExpenseItemFragment() {
         // Required empty public constructor
     }
 
@@ -51,11 +47,11 @@ public class EmployeeNameFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment EmployeeNameFragment.
+     * @return A new instance of fragment TripExpenseItemFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static EmployeeNameFragment newInstance(String param1, String param2) {
-        EmployeeNameFragment fragment = new EmployeeNameFragment();
+    public static TripExpenseItemFragment newInstance(String param1, String param2) {
+        TripExpenseItemFragment fragment = new TripExpenseItemFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -76,37 +72,28 @@ public class EmployeeNameFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_employee_name, container, false);
-
-        return view;
+        return inflater.inflate(R.layout.fragment_trip_name, container, false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        employeeListRecycle = (RecyclerView) view.findViewById(R.id.employee_list_recycle);
-
-        setvalues();
+        tripExpensesRev=(RecyclerView)view.findViewById(R.id.rev_name_of_expenses);
+        setValuses();
     }
 
-    private void setvalues() {
-
-        employeeListRecycle.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
-        ArrayList<EmployeeName> employeeNameArrayList = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            EmployeeName employeeName = new EmployeeName();
-            employeeName.setEmpImage("Shrikant");
-            employeeName.setEmpId("#EMPID-001");
-            employeeNameArrayList.add(employeeName);
+    private void setValuses() {
+        tripExpensesRev.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+        ArrayList<IndividualExpenses> individualExpensesArrayList = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            IndividualExpenses individualExpenses = new IndividualExpenses();
+            individualExpenses.setExpensesName("Cab");
+            individualExpenses.setExpensesDate("12-07-2017");
+            individualExpenses.setTotalAmount("$500");
+            individualExpenses.setExpensesStatus("Accept");
+            individualExpensesArrayList.add(individualExpenses);
 
         }
-
-        employeeListRecycle.setAdapter(new EmlpoyeeListAdapter(getActivity(), employeeNameArrayList, new EmployeeListItemClickListner() {
-            @Override
-            public void itemClickListner(EmployeeName employeeName) {
-
-            }
-        }));
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -133,6 +120,16 @@ public class EmployeeNameFragment extends Fragment {
         mListener = null;
     }
 
+    /**
+     * This interface must be implemented by activities that contain this
+     * fragment to allow an interaction in this fragment to be communicated
+     * to the activity and potentially other fragments contained in that
+     * activity.
+     * <p>
+     * See the Android Training lesson <a href=
+     * "http://developer.android.com/training/basics/fragments/communicating.html"
+     * >Communicating with Other Fragments</a> for more information.
+     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);

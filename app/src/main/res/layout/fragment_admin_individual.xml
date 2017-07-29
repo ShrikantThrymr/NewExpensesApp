@@ -1,25 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.thrymr.newexpensesapp.Activity.admin.EmployeeListActivity">
+    tools:context="com.example.thrymr.newexpensesapp.Fragments.admin.IndividualExpensesViewFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_margin="@dimen/d10"
         android:layout_height="wrap_content">
 
-        <include
-            android:id="@+id/toolbar_t"
-            layout="@layout/toolbar_layout" />
-
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/employee_list_recycle"
+            android:id="@+id/rcv_individual"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/toolbar">
+            android:layout_height="wrap_content">
 
         </android.support.v7.widget.RecyclerView>
     </RelativeLayout>
-
 </RelativeLayout>

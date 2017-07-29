@@ -1,4 +1,4 @@
-package com.example.thrymr.newexpensesapp.Adapter;
+package com.example.thrymr.newexpensesapp.Adapter.admin;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,25 +7,22 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.thrymr.newexpensesapp.R;
-import com.example.thrymr.newexpensesapp.Views.CircularImageView;
 import com.example.thrymr.newexpensesapp.Views.CustomFontTextView;
-import com.example.thrymr.newexpensesapp.listners.AdminTripItemClickListner;
-import com.example.thrymr.newexpensesapp.listners.EmployeeListItemClickListner;
+import com.example.thrymr.newexpensesapp.listners.admin.AdminTripItemClickListner;
 import com.example.thrymr.newexpensesapp.models.AdminTrip;
-import com.example.thrymr.newexpensesapp.models.EmployeeName;
 
 import java.util.List;
 
 /**
- * Created by thrymr on 28/7/17.
+ * Created by Shrikant on 28/7/17.
  */
 
-public class AdminTripViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class IndividualExpensesViewAdpater extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<AdminTrip> adminTripList;
     private Context context;
     private AdminTripItemClickListner adminTripItemClickListner;
 
-    public AdminTripViewAdapter(Context context, List<AdminTrip> adminTripList, AdminTripItemClickListner adminTripItemClickListner) {
+    public IndividualExpensesViewAdpater(Context context, List<AdminTrip> adminTripList, AdminTripItemClickListner adminTripItemClickListner) {
         this.context = context;
         this.adminTripList = adminTripList;
         this.adminTripItemClickListner = adminTripItemClickListner;
@@ -33,7 +30,7 @@ public class AdminTripViewAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new DetailsViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.view_admin_trip_layout, parent, false));
+        return new DetailsViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.view_admin_individual_layout, parent, false));
     }
 
     @Override
@@ -44,31 +41,31 @@ public class AdminTripViewAdapter extends RecyclerView.Adapter<RecyclerView.View
             if (adminTrip.getEmpName() != null) {
                 detailsViewHolder.empName.setText(adminTrip.getEmpName());
             } else {
-                detailsViewHolder.empName.setText("Shrikant Tripathi");
+                detailsViewHolder.empName.setText("Rahul");
             }
             if (adminTrip.getEmpId() != null) {
                 detailsViewHolder.empID.setText(adminTrip.getEmpId());
             } else {
-                detailsViewHolder.empID.setText("139");
+                detailsViewHolder.empID.setText("137");
             }
-            if (adminTrip.getTripName() !=null){
+            if (adminTrip.getTripName() != null) {
                 detailsViewHolder.tripName.setText(adminTrip.getTripName());
-            }else {
-                detailsViewHolder.tripName.setText("Singapore");
+            } else {
+                detailsViewHolder.tripName.setText("Cab");
             }
-            if (adminTrip.getTripDate() !=null){
+            if (adminTrip.getTripDate() != null) {
                 detailsViewHolder.tripDate.setText(adminTrip.getTripDate());
-            }else {
+            } else {
                 detailsViewHolder.tripDate.setText("12-07-2017");
             }
-            if (adminTrip.getTotalAmount() !=null){
+            if (adminTrip.getTotalAmount() != null) {
                 detailsViewHolder.tripAmount.setText(adminTrip.getTotalAmount());
-            }else {
+            } else {
                 detailsViewHolder.tripAmount.setText("$500");
             }
-            if (adminTrip.getTripStatus() !=null){
+            if (adminTrip.getTripStatus() != null) {
                 detailsViewHolder.tripStatus.setText(adminTrip.getTripStatus());
-            }else {
+            } else {
                 detailsViewHolder.tripStatus.setText("Pending");
             }
 
@@ -103,8 +100,8 @@ public class AdminTripViewAdapter extends RecyclerView.Adapter<RecyclerView.View
             tripName = (CustomFontTextView) view.findViewById(R.id.trip_name);
             tripDate = (CustomFontTextView) view.findViewById(R.id.trip_date);
             tripAmount = (CustomFontTextView) view.findViewById(R.id.trip_amount);
-            empID=(CustomFontTextView)view.findViewById(R.id.emp_id);
-            tripStatus=(CustomFontTextView)view.findViewById(R.id.status);
+            empID = (CustomFontTextView) view.findViewById(R.id.emp_id);
+            tripStatus = (CustomFontTextView) view.findViewById(R.id.status);
         }
     }
 }

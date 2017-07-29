@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:tag="cards main container">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/d10"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/d10"
+            android:background="@drawable/edit_text_border">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="6">
+
+                <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+                    android:id="@+id/trip_area_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="start"
+                    android:text="Mumbai"
+                    android:textColor="@color/input_register_bg"
+                    android:textSize="@dimen/s15" />
+
+                <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+                    android:id="@+id/trip_date_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="01-10-22"
+                    android:textColor="@color/input_register_bg" />
+
+                <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+                    android:id="@+id/trip_status_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="Accept"
+                    android:textColor="@color/green" />
+
+                <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+                    android:id="@+id/trip_cost_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="$300"
+                    android:textColor="@color/input_register_bg" />
+
+                <com.example.thrymr.newexpensesapp.Views.CustomImageView
+                    android:id="@+id/next_screen_tv"
+                    android:layout_width="@dimen/d30"
+                    android:layout_height="@dimen/d30"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:src="@drawable/ic_net_item" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

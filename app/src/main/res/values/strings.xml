@@ -16,10 +16,10 @@
     <string name="password">Password</string>
     <string name="action_log_in">Login</string>
     <string name="title">Employee Expenses</string>
-    <string name="employee_expenses_list">Employee Expenses List</string>
+    <string name="employee_expenses">Employee Expenses</string>
 
     <string-array name="nav_drawer_items">
-        <item>Employee List </item>
+        <item>Employee Expenses </item>
         <item>Expenses</item>
         <item>Notification</item>
         <item>Settings</item>
@@ -28,6 +28,29 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tripname">Singapore Trip</string>
+    <string name="trip_date">12-02-2017</string>
+    <string name="expenses_name">Cab</string>
+    <string name="date_of_bill">Date Of Bill :</string>
+    <string name="date_of_bill_tv">02-05-2017</string>
+    <string name="details">Bill Details</string>
+    <string name="total_amount">Total Amount</string>
+    <string name="details_tv">I want  Kapil Tawor to  Patanjali office.</string>
+    <string name="total_amount_tv">$500</string>
+    <string name="bill_picture">Bill Picture</string>
+    <string name="approve">Approve</string>
+    <string name="reject_btn">Reject</string>
+    <string name="expenses">Expenses</string>
+
+
+    <string name="nav_expense">Expenses</string>
+    <string name="choose_expenses_tv">ChooseExpenses</string>
+    <string name="upload_picture">Upload Picture</string>
+    <string name="save">Save</string>
+    <string name="add_expenses">Add Expenses</string>
+    <string name="enter_trip_date_edtv">Enter Trip Date</string>
+    <string name="trip_name">Trip Name</string>
+
 
 
 </resources>

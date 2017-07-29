@@ -47,4 +47,5 @@
     <color name="whiteText">#ffffff</color>
     <color name="holo_green">#ff99cc00</color>
     <color name="premium_highlight">#FFFDF0</color>
+    <color name="red_light">#ff0000</color>
 </resources>

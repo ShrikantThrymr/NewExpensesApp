@@ -15,6 +15,7 @@ import java.util.Set;
 public class Prefs {
 
     private static SharedPreferences mPrefs;
+    public static final String CURRENT_FRAGMENT = "current_fragment";
 
 
     /**

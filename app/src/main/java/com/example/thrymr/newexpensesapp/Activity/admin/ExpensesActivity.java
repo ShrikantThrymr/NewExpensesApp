@@ -1,4 +1,4 @@
-package com.example.thrymr.newexpensesapp.Activity;
+package com.example.thrymr.newexpensesapp.Activity.admin;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,29 +15,28 @@ import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.thrymr.newexpensesapp.Activity.admin.ExpensesActivity;
+import com.example.thrymr.newexpensesapp.Fragments.NavDrawerFragment;
 import com.example.thrymr.newexpensesapp.Fragments.admin.IndividualExpensesViewFragment;
 import com.example.thrymr.newexpensesapp.Fragments.admin.TripExpensesViewFragment;
-import com.example.thrymr.newexpensesapp.Fragments.NavDrawerFragment;
 import com.example.thrymr.newexpensesapp.Fragments.employee.IndividualExpensesFragment;
 import com.example.thrymr.newexpensesapp.Fragments.employee.TripExpensesFragment;
 import com.example.thrymr.newexpensesapp.R;
 import com.example.thrymr.newexpensesapp.Utils.Constants;
 import com.example.thrymr.newexpensesapp.Views.CustomFontTextView;
 
-public class MainActivity extends AppCompatActivity implements NavDrawerFragment.NavigationDrawerCallbacks,
-        TripExpensesViewFragment.OnFragmentInteractionListener,
-        IndividualExpensesViewFragment.OnFragmentInteractionListener,TripExpensesFragment.OnFragmentInteractionListener,IndividualExpensesFragment.OnFragmentInteractionListener {
+public class ExpensesActivity extends AppCompatActivity implements NavDrawerFragment.NavigationDrawerCallbacks,
+        TripExpensesFragment.OnFragmentInteractionListener,
+        IndividualExpensesFragment.OnFragmentInteractionListener,TripExpensesViewFragment.OnFragmentInteractionListener {
 
     private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_expenses);
+        getSupportActionBar();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        ((CustomFontTextView) toolbar.findViewById(R.id.text_title)).setText(R.string.employee_expenses);
+        ((CustomFontTextView) toolbar.findViewById(R.id.text_title)).setText(R.string.expenses);
         setSupportActionBar(toolbar);
 
         //set Navigation drawable menu
@@ -50,7 +49,8 @@ public class MainActivity extends AppCompatActivity implements NavDrawerFragment
         setTabLayout(tabLayout);
         setTabIndicator(0);
 
-        startNewFragment(new TripExpensesViewFragment(), Constants.TRIP_EXPENSES_VIEW_FRAGMENT, false);
+        startNewFragment(new TripExpensesFragment(), Constants.EMP_TRIP_EXPENSES, false);
+
     }
 
     private void setTabLayout(final TabLayout tabLayout) {
@@ -102,15 +102,15 @@ public class MainActivity extends AppCompatActivity implements NavDrawerFragment
             String tagStr = tag.toString();
             switch (tagStr) {
                 case Constants.TRIP:
-                    if (!(getSupportFragmentManager().findFragmentById(R.id.container) instanceof TripExpensesViewFragment)) {
+                    if (!(getSupportFragmentManager().findFragmentById(R.id.container) instanceof TripExpensesFragment)) {
                         clearPopUpBackStack();
-                        startNewFragment(new TripExpensesViewFragment(), Constants.ADMIN_TRIP_FRAGMENT, false);
+                        startNewFragment(new TripExpensesFragment(), Constants.EMP_TRIP_EXPENSES, false);
                     }
                     break;
                 case Constants.INDIVIDUAl:
-                    if (!(getSupportFragmentManager().findFragmentById(R.id.container) instanceof IndividualExpensesViewFragment)) {
+                    if (!(getSupportFragmentManager().findFragmentById(R.id.container) instanceof IndividualExpensesFragment)) {
                         clearPopUpBackStack();
-                        startNewFragment(new IndividualExpensesViewFragment(), Constants.INDIVIDUAL_EXPENSES_VIEW_FRAGMENT, false);
+                        startNewFragment(new IndividualExpensesFragment(), Constants.EMP_INDIVIDUAL_EXPENSES, false);
                     }
                     break;
             }
@@ -143,11 +143,6 @@ public class MainActivity extends AppCompatActivity implements NavDrawerFragment
         }
     }
 
-    private void reuseCustomTabView(LinearLayout tabLayout) {
-        TextView tabText = (TextView) tabLayout.findViewById(R.id.tab_text);
-        tabText.setTextColor(getResources().getColor(R.color.yellow));
-    }
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -173,6 +168,15 @@ public class MainActivity extends AppCompatActivity implements NavDrawerFragment
         ftr.commitAllowingStateLoss();
     }
 
+    @Override
+    public void onFragmentInteraction(String shri) {
+
+    }
+
+    @Override
+    public void onFragmentInteraction() {
+
+    }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
@@ -181,18 +185,7 @@ public class MainActivity extends AppCompatActivity implements NavDrawerFragment
                 startNewFragment(new TripExpensesViewFragment(), Constants.employee_name_fragment, false);
                 break;
             case 1:
-                startActivity(new Intent(this,ExpensesActivity.class));
+                startActivity(new Intent(this, ExpensesActivity.class));
         }
-    }
-
-    @Override
-    public void onFragmentInteraction(String shri) {
-
-
-    }
-
-    @Override
-    public void onFragmentInteraction() {
-
     }
 }

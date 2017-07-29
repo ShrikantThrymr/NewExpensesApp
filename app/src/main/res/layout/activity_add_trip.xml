@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/main_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/d50"
+        android:orientation="vertical">
+
+        <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+            android:id="@+id/enter_trip_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/grey"
+            android:text="@string/trip_name" />
+
+        <com.example.thrymr.newexpensesapp.Views.CustomEditText
+            android:id="@+id/edtv_trip_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/details_tv"
+            android:layout_margin="5dp"
+            android:background="@drawable/edit_text_border"
+            android:padding="5dp" />
+
+        <com.example.thrymr.newexpensesapp.Views.CustomFontTextView
+            android:id="@+id/tv_trip_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtv_trip_name"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/grey"
+            android:layout_marginTop="10dp"
+            android:text="@string/enter_trip_date_edtv" />
+
+        <com.example.thrymr.newexpensesapp.Views.CustomEditText
+            android:id="@+id/edtv_trip_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/total_amount_tv"
+            android:layout_margin="5dp"
+            android:background="@drawable/edit_text_border"
+            android:padding="5dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/save_data_btn"
+        android:layout_width="@dimen/d200"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_ll"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:background="@color/green"
+        android:text="@string/save"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

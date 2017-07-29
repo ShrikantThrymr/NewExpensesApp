@@ -1,4 +1,4 @@
-package com.example.thrymr.newexpensesapp.Activity;
+package com.example.thrymr.newexpensesapp.Activity.admin;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,14 +6,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
-import com.example.thrymr.newexpensesapp.Adapter.EmlpoyeeListAdapter;
+import com.example.thrymr.newexpensesapp.Adapter.admin.EmlpoyeeListAdapter;
 import com.example.thrymr.newexpensesapp.R;
 import com.example.thrymr.newexpensesapp.Views.CustomFontTextView;
-import com.example.thrymr.newexpensesapp.listners.EmployeeListItemClickListner;
+import com.example.thrymr.newexpensesapp.listners.admin.EmployeeListItemClickListner;
 import com.example.thrymr.newexpensesapp.models.EmployeeName;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class EmployeeListActivity extends AppCompatActivity {
 
@@ -26,7 +25,7 @@ public class EmployeeListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        ((CustomFontTextView) toolbar.findViewById(R.id.text_title)).setText(R.string.employee_expenses_list);
+        ((CustomFontTextView) toolbar.findViewById(R.id.text_title)).setText(R.string.employee_expenses);
         setvalues();
     }
 

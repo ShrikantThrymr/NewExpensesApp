@@ -1,4 +1,4 @@
-package com.example.thrymr.newexpensesapp.listners;
+package com.example.thrymr.newexpensesapp.listners.admin;
 
 import com.example.thrymr.newexpensesapp.models.EmployeeName;
 
