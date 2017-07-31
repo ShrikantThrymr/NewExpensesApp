@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.thrymr.newexpensesapp.Activity.NotificationActivity;
 import com.example.thrymr.newexpensesapp.Fragments.NavDrawerFragment;
 import com.example.thrymr.newexpensesapp.Fragments.admin.IndividualExpensesViewFragment;
 import com.example.thrymr.newexpensesapp.Fragments.admin.TripExpensesViewFragment;
@@ -186,6 +187,9 @@ public class ExpensesActivity extends AppCompatActivity implements NavDrawerFrag
                 break;
             case 1:
                 startActivity(new Intent(this, ExpensesActivity.class));
+            case 2:
+                startActivity(new Intent(this,NotificationActivity.class));
+                break;
         }
     }
 }

@@ -29,6 +29,7 @@
         <activity android:name=".Activity.employee.AddTripNameAcitvity" />
         <activity android:name=".Activity.employee.AddIndividualExpensesActivity"/>
         <activity android:name=".Activity.employee.TripNameExpensesActivity"/>
+        <activity android:name=".Activity.NotificationActivity"/>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
